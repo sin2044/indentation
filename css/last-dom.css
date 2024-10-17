@@ -3,6 +3,7 @@
 }
 
 .last-dom__title {
+  white-space: pre-line;
   font-size: 36px;
   font-weight: 900;
   line-height: 120%;
