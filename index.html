@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" href="fonts/Roboto-Black.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Правильная организация отступов в верстке</title>
+</head>
+<body>
+  <article class="indentation">
+    <div class="indentation__container container">
+      <h1 class="indentation__title">Отступы в вёрстке: margin и padding</h1>
+      <p class="indentation__first-paragraph">
+        В этой статье я рассмотрю самые популярные "стандартные" решения для сохранения смысла и хорошей читаемости вашего кода. Если точнее — речь пойдет об основных правилах организации отступов. Они сильно влияют на общую функциональность кода и, если всё сделано верно, позволяют легко вносить изменения в любую его часть. При этом другие части кода продолжат нормально работать.
+      </p>
+      <p class="indentation__second-paragraph">
+        Как это часто бывает, знание базовых принципов поможет проявить гибкость и выйти за их пределы. Эти знания особенно важны для начинающих, но также будут полезным напоминанием и для более опытных верстальщиков. Итак, поговорим о фундаментальных основах работы с отступами в вёрстке.
+      </p>
+      <section class="content">
+          <h2 class="content__title">Содержание:</h2>
+          <ol class="content__list">
+            <li class="content__item"><a href="#indentation-order" class="content__link">Отступ задается от предыдущего элемента к следующему</a></li>
+            <li class="content__item"><a href="#last-dom" class="content__link">Отступ задается последнему возможному элементу в DOM-дереве</a></li>
+            <li class="content__item"><a href="#last-child" class="content__link">Для последнего элемента группы отступ обнуляется</a></li>
+          </ol>
+      </section>
+
+      <section class="indentation-order">
+        <h2 class="indentation-order__title">
+          Отступ задается от предыдущего элемента к следующему: от первого ко второму, сверху вниз, слева направо.
+        </h2>
+        <div class="indentation-order__box">
+          <div class="indentation-order__left-img">
+            <img src="/img/s_2_img_1.jpg" alt="Пример задания внешних отступов" class="indentation-order__first-img">
+          </div>
+          <div class="indentation-order__right-text right-text">
+            <p class=" right-text__first-p"><b class="right-text__bold">ВАЖНО:</b> <em class="right-text__italic">margin</em> всегда задают от предыдущего элемента к следующему.</p>
+            <p class=" right-text__second-p">Свойство <em class="right-text__italic">margin</em> необходимо только для того, чтобы отодвинуть своего соседа справа или снизу, поэтому используется <em class="right-text__italic">margin-right</em>  и <em class="right-text__italic">margin-bottom.</em> </p>
+            <p class="right-text__third-p">(!) Свойства <em class="right-text__italic">margin-left</em> и <em class="right-text__italic">margin-top</em>  используются крайне редко.</p>
+            <p class=" right-text__fourth-p">Для <em class="right-text__italic">padding</em>  верно обратное. Исключением является его применения в декоративных целях, например, для увеличения области ссылки.</p>
+          </div>
+
+          <div class="indentation-order__left-text left-text">
+            <p class="left-text__first">Отступ внутри блока сверху или слева реализуется через <em class="left-text__italic">padding-top</em> и <em class="left-text__italic">padding-left</em>  родителя.</p>
+            <p class="left-text__second">Отступы, как правило, делают в направлении от предыдущего элемента к следующему. Так элемент не будет толкать сам себя.</p>
+            <p class="left-text__third">Изначально элемент статичен, а его положение может меняться только под воздействием свойств других блоков или свойств родителя.</p>
+          </div>
+          <div class="indentation-order__right-img">
+            <img src="img/s_2_img_2.jpg" alt="Пример задания внутренних отступов" class="indentation-order__second-img">
+          </div>
+        </div>
+      </section>
+
+      <section class="last-dom">
+        <h2 class="last-dom__title " id="last-dom" >Отступ задается последнему возможному элементу в DOM-дереве</h2>
+        <p class="last-dom__first-text">Вообще, margin задают исключительно между соседними элементами DOM-дерева. Для примера, посмотрите на этот список:</p>
+        <div class="last-dom__first-wrap">
+          <img src="img/s_3_img_1.jpg" alt="Пример задания отступов" class="last-dom__f-img">
+        </div>
+        <div class="last-dom__second-wrap">
+          <img src="img/s_3_img_2.jpg" alt="Пример задания отступов" class="last-dom__s-img">
+        </div>
+        <p class="last-dom__second-text">
+          Отступ делают за счёт соседних элементов, а не дочерних:
+        </p>
+        <figure class="last-dom__figure">
+          <div class="last-dom__figure-wrap">
+            <img src="img/s_3_img_3.jpg" alt="Пример задания отступов" class="last-dom__t-img">
+          </div>
+          <figcaption class="last-dom__figcaption">
+            <b class="last-dom__bold">ВАЖНО:</b> здесь <i class="last-dom__italic">.list-item</i> — последний возможный элемент в котором мы задаём отступ, чтобы разделить списки.
+          </figcaption>
+        </figure>
+        
+        <p class="last-dom__third-text">
+          Казалось бы, можно задать отступ параграфу &lt;p&gt;, либо обёртке &lt;article&gt; для достижения той же цели. Внешне останется все точно также, но так делать не рекомендуется.
+        </p>
+        <p class="last-dom__third-text">Предыдущий пример был достаточно простым, но бывает вложенность значительно больше.</p>
+        <div class="last-dom__fourth-wrap">
+          <img src="img/s_3_img_4.jpg" alt="Пример задания отступов" class="last-dom__fr-img">
+        </div>
+        <p class="last-dom__fourth-text">
+          В случае с заголовком, если ему необходим отступ сверху, последним элементом будет <em class="last-dom__italic">section</em>. Именно для него задается <em class="last-dom__italic">padding-top</em> , а не <em class="last-dom__italic">div</em>  с классом <em class="last-dom__italic">container</em> . Свойства <em class="last-dom__italic">margin</em>, которые стоят по умолчанию необходимо обнулить. 
+        </p>
+        <div class="last-dom__fourth-wrap">
+          <img src="img/s_3_img_5.jpg" alt="Пример задания отступов" class="last-dom__fv-img">
+        </div>
+        <p class="last-dom__fiveth-text">
+          Это необходимо для более простого поиска отступов в будущем — для вас или того, кто будет верстать после вас. Кроме того, возможны серьёзные проблемы при динамическом дублировании или выводе вёрстки с нестандартной структурой отступов.
+        </p>
+      </section>
+
+      <section class="last-child">
+        <h2 class="last-child__title" id="last-child">Для последнего элемента группы отступ всегда обнуляется</h2>
+        <p class="last-child__par-one">Для наглядности возьмём наш предыдущий пример с рецептами</p>
+        <p class="last-child__par-two">Между рецептами расстояние одинаковое. Можно заметить, что и до следующего блока расстояние такое же.</p>
+        <div class="last-child__first-wrapper">
+          <img src="img/s_4_img_1.jpg" alt="Пример обнуления последнего элемента в группе" class="last-child__first-pic">
+        </div>
+        <p class="last-child__par-three">
+          В соответствии со вторым принципом: последний <em class="last-child__italic">margin</em>  обнуляется, а нижний отступ задаётся через <em class="last-child__italic">padding</em> для <em class="last-child__italic">section</em>. Я чаще всего задаю <em class="last-child__italic">padding</em> для секции с обоих сторон, если расстояние между секциями 100px задаю секциям <em class="last-child__italic">padding-top:50px</em>  и <em class="last-child__italic">padding-bottom:50px.</em> padding-bottom:50px.
+        </p>
+        <div class="last-child__second-wrapper">
+          <img src="img/s_4_img_2.jpg" alt="Примеры обнуления последнего элемента в группе в коде" class="last-child__second-pic">
+        </div>
+        <div class="last-child__third-wrapper">
+          <img src="img/s_4_img_3.jpg" alt="Примеры обнуления последнего элемента в группе в коде" class="last-child__third-pic">
+        </div>
+        <div class="last-child__fourth-wrapper">
+          <img src="img/s_4_img_4.jpg" alt="Примеры обнуления последнего элемента в группе в коде" class="last-child__fourth-pic">
+        </div>
+        <p class="last-child__par-four">Для большего понимания рассмотрим другой пример, который часто встречается на практике:</p>
+        <div class="last-child__fiveth-wrapper">
+          <img src="img/s_4_img_5.jpg" alt="Примеры обнуления последнего элемента в группе в коде" class="last-child__fiveth-pic">
+        </div>
+        <div class="last-child__sixth-wrapper">
+          <img src="img/s_4_img_6.jpg" alt="Примеры обнуления последнего элемента в группе в коде" class="last-child__sixth-pic">
+        </div>
+        <p class="last-child__par-five">Здесь нас интересует отступ между пунктами меню и списком с кнопкой поиска. Отступы между пунктами меню задаются так:</p>
+        <div class="last-child__seventh-wrapper">
+          <img src="img/s_4_img_7.jpg" alt="Примеры обнуления последнего элемента в группе в коде" class="last-child__seventh-pic">
+        </div>
+        <p class="last-child__par-five">Советую использовать псевдоклассы :last-child чаще других, например так:</p>
+        <div class="last-child__eight-wrapper">
+          <img src="img/s_4_img_8.jpg" alt="Примеры обнуления последнего элемента в группе в коде" class="last-child__eight-pic">
+        </div>
+      </section>
+
+      <section class="conclusions">
+        <h2 class="conclusions__title">Подытожим:</h2>
+        <ul class="conclusions__list">
+          <li class="conclusions__item"> — отступы задаём от предыдущего элемента к следующему</li>
+          <li class="conclusions__item"> — используем только margin-right и margin-bottom</li>
+          <li class="conclusions__item"> — внешние отступы задаются только между соседями</li>
+          <li class="conclusions__item"> — внутренний отступ задаём самому верхнему элементу в дом дереве</li>
+          <li class="conclusions__item"> — последнему элементу группы отступ всегда обнуляем</li>
+        </ul>
+        <p class="conclusions__first-paragraph">
+          Конечно бывают исключения. Ведь макеты бывают различной сложности. Иногда базовые принципы приходится нарушать в угоду дизайнерского решения или простоты вёрстки. Но для этого эти принципы необходимо хорошо знать.
+        </p>
+      </section>
+    </div>
+  </article>
+</body>
+</html>
