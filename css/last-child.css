@@ -2,6 +2,10 @@
   padding: 25px 0; 
 }
 
+.last-child__container {
+  padding: 0 30px;
+}
+
 .last-child__title {
   font-size: 36px;
   font-weight: 900;
@@ -23,7 +27,7 @@
   margin-bottom: 30px;
 }
 
-.last-child__first-wrapper {
+.last-child__first-pic {
   width: 600px;
   height: 600px;
   margin: 0 auto 30px;
@@ -37,17 +41,17 @@
 
 }
 
-.last-child__second-wrapper {
+.last-child__second-pic {
   width: 600px;
   height: 607px;
   margin: 0 auto 30px;
 }
 
-.last-child__third-wrapper {
+.last-child__third-pic {
   height: 528px;
 }
 
-.last-child__fourth-wrapper {
+.last-child__fourth-pic {
   height: 530px;
   margin-bottom: 30px;
 }
@@ -59,12 +63,12 @@
   margin-bottom: 30px;
 }
 
-.last-child__fiveth-wrapper {
+.last-child__fiveth-pic {
   height: 88px;
   margin-bottom: 30px;
 }
 
-.last-child__sixth-wrapper {
+.last-child__sixth-pic {
   width: 806px;
   margin: 0 auto 30px;
 }
@@ -76,20 +80,20 @@
   margin-bottom: 30px;
 }
 
-.last-child__seventh-wrapper {
+.last-child__seventh-pic {
   width: 317px;
   height: 110px;
   margin: 0 auto 30px;
 }
 
-.last-child__par-five {
+.last-child__par-six {
   font-size: 20px;
   font-weight: 400;
   line-height: 120%;
   margin-bottom: 30px;
 }
 
-.last-child__eight-wrapper {
+.last-child__eight-pic {
   width: 500px;
   height: 383px;
   margin: 0 auto;

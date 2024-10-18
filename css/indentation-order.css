@@ -1,6 +1,10 @@
 
 .indentation-order {
   padding-bottom: 25px;
+
+}
+.indentation-order__container {
+  padding: 0 30px;
 }
 .indentation-order__title {
   max-width: 1080px;
@@ -14,10 +18,10 @@
   font-size: 0;
 }
 
-.indentation-order__left-img {
+.indentation-order__first-img {
+  display: inline-block;
   width: 560px;
   height: 415px;
-  display: inline-block;
   margin-right: 30px;
   margin-bottom: 30px;
 }
@@ -93,7 +97,7 @@
 
 }
 
-.indentation-order__right-img {
+.indentation-order__second-img {
   width: 560px;
   height: 279px;
   display: inline-block;

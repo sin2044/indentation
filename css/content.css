@@ -1,12 +1,16 @@
 .content {
-  width: 1140px;
   height: 215px;
   background-color: #f1f1f1;
   border-radius: 10px;
-  margin: 0 -30px;
-  padding: 25px 0 25px 66px;
   margin-bottom: 50px;
+  padding: 25px 0 25px 45px;
+
 }
+
+.content__container {
+  max-width: 1140px;
+  
+} 
 
 .content__title {
   font-size: 44px;
